@@ -1,75 +1,37 @@
 import React from "react";
+import { useSelector } from "react-redux/es/exports"
+import { Utils } from "../scripts/Utils";
+import { ROUTES } from "../scripts/Routes";
 
 export function RegionBox() {
+
+    const location = useSelector((state) => state.location.value);
+    const routesData = Utils.createArray(ROUTES[location.currentRegionId]);
+    console.log(routesData);
+    let createRouteButton = (route) => {
+        return(
+            <button id={route.name} key={route.id}>
+                {route.name}
+            </button>
+        )
+    };
 
     return(
         <div id="regionBoxContainer">
             <div id="regionSelectContainer">
-                <span>RegionSelect</span><br/>
-                <button
-                    id="kantoButton"
-                    onClick="userInteractions.goToKanto()"
-                    className="button"
-                    value="Kanto"
-                >
-                    Kanto
-                </button>
-                <button
-                    id="johtoButton"
-                    onClick="userInteractions.goToJohto()"
-                    className="button"
-                    value="Johto"
-                >
-                    Johto
-                </button>
-                <button
-                    id="hoennButton"
-                    onClick="userInteractions.goToHoenn()"
-                    className="button"
-                    value="Hoenn"
-                >
-                    Hoenn
-                </button><br/>
-                <button
-                    id="sinnohButton"
-                    onClick="userInteractions.goToSinnoh()"
-                    className="button"
-                    value="Sinnoh"
-                >
-                    Sinnoh
-                </button>
-                <button
-                    id="unovaButton"
-                    onClick="userInteractions.goToUnova()"
-                    className="button"
-                    value="Unova"
-                >
-                    Unova
-                </button>
-                <button
-                    id="kalosButton"
-                    onClick="userInteractions.goToKalos()"
-                    className="button"
-                    value="Kalos"
-                >
-                    Kalos
-                </button><br/>
-                <button
-                    id="alolaButton"
-                    onClick="userInteractions.goToAlola()"
-                    className="button"
-                    value="Alola"
-                >
-                    Alola
-                </button>
-                <button
-                    id="galarButton"
-                    onClick="userInteractions.goToNone()"
-                    className="button"
-                    value="Galar"
-                >
-                    Galar
-                </button><br/>
+                <span>RegionSelect</span>
+                <div>
+                    <button>Kanto</button>
+                    <button>Johto</button>
+                    <button>Hoenn</button>
+                    <button>Sinnoh</button>
+                    <button>Kalos</button>
+                </div>
+            </div>
+            <div id="routeList">
+                <ul>
+                    {routesData.map(createRouteButton, this)}
+                </ul>
             </div>
         </div>
     )

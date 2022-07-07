@@ -1,14 +1,14 @@
 import './App.css';
 import { BallBox } from './components/BallBox';
 import { CurrencyBox } from './components/CurrencyBox';
+import { MainBox } from './components/MainBox';
 import { RegionBox } from './components/RegionBox';
-import { RoutesBox } from './components/RoutesBox';
 
 function App() {
   return (
     <div className="App">
       <RegionBox />
-      <RoutesBox />
+      <MainBox />
       <CurrencyBox />
       <BallBox />
     </div>
