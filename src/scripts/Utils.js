@@ -4,5 +4,8 @@ export const Utils = {
             return stuff[key];
         })
         return rArray;
+    },
+    loadSave() {
+        return JSON.parse(localStorage.getItem("nnpg"));
     }
 }
