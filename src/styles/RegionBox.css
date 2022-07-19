@@ -1,0 +1,5 @@
+#regionBoxContainer {
+    grid-row: 1 / 4;
+    grid-column: 3;
+    border: 1px solid black;
+}

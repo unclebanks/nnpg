@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import "../styles/BallBox.css";
 
 export function BallBox() {
 

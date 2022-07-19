@@ -10,7 +10,7 @@ function App() {
   const saveFile = localStorage.getItem("nnpg")? Utils.loadSave() : "";
   // ^^^ this Utils.loadSave() needs to be updated to load all the saved information to Redux and/or set state where required
 
-  const [appComponentToReturn, setAppComponentToReturn] = useState("newGame");
+  const [appComponentToReturn, setAppComponentToReturn] = useState("main");
 
   let appSubComponent;
 

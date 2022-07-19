@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import "../styles/CurrencyBox.css";
 
 export function CurrencyBox() {
 

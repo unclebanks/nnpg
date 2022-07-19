@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux"
 import { Utils } from "../scripts/Utils";
 import { ROUTES } from "../scripts/Routes";
+import "../styles/RegionBox.css";
 
 export function RegionBox() {
 
