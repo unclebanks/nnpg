@@ -12,7 +12,6 @@ import { useEffect } from 'react';
 
 function App() {
   const startGame = () => {  
-    console.log("gamestarted");
   if (localStorage.getItem(`totalPokes`) !== null) {
       player.loadPokes();
       dom.refreshCatchOption(player.settings.catching);

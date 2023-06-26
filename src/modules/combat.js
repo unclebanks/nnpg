@@ -23,7 +23,6 @@ export class Combat {
         }
     };
     pause(enemy) {
-        console.log(enemy);
         this.paused = true;
         this.stop();
         enemy.clear();
