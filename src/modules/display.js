@@ -3,6 +3,7 @@ import { ROUTES } from './routes';
 import { POKEDEX } from './db';
 import {POKEDEXFLAGS,COLORS} from './main';
 import { PokemonFNImageImport } from '../data/PokemonFrontNormalImageImports';
+import { PokemonBNImageImport } from '../data/PokemonBackNormalImageImports';
 
 export class Display {
     setValue(domElement, newValue, append) {
@@ -58,7 +59,11 @@ export class Display {
             status: container.querySelector('.status')
         };
         this.setValue(domElements.name, poke.name + ' (' + poke.level + ')');
-        this.setProp(domElements.img, 'src', PokemonFNImageImport[getPokeIdByName(poke.name)][poke.name.toLowerCase()]);
+        if(id === "player") {    
+            this.setProp(domElements.img, 'src', PokemonBNImageImport[getPokeIdByName(poke.name)][poke.name.toLowerCase()]);
+        } else{
+            this.setProp(domElements.img, 'src', PokemonFNImageImport[getPokeIdByName(poke.name)][poke.name.toLowerCase()]);
+        }
         this.setValue(domElements.hp, poke.lifeAsText());
         this.setProp(domElements.hpBar, 'value', poke.currentHp);
         this.setProp(domElements.hpBar, 'max', poke.computedStats.hp);
@@ -363,6 +368,9 @@ export class Display {
 
         $(`#townContainer`).addEventListener( 'click'
             , (event) => { event.target === $(`#townContainer`) && ($(`#townContainer`).style.display = 'none'); }
+        );
+        $(`#pokemonCenterContainer`).addEventListener( 'click'
+            , (event) => { event.target === $(`#pokemonCenterContainer`) && ($(`#pokemonCenterContainer`).style.display = 'none'); }
         );
     }
 };

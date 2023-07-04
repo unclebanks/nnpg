@@ -9,6 +9,7 @@ import { StoryContainer } from './components/StoryContainer';
 import { player,dom,userInteractions,combatLoop,enemy,town } from './modules/main';
 import { renderView } from './modules/display';
 import { useEffect } from 'react';
+import { PokemonCenter } from './components/PokemonCenter';
 
 function App() {
   const startGame = () => {  
@@ -55,6 +56,7 @@ useEffect(() => {
       <SettingsContainer />
       <TownContainer />
       <StoryContainer userInteractions={userInteractions} startGame={startGame} dom={dom} player={player} enemy={enemy} combatLoop={combatLoop}/>
+      <PokemonCenter player={player}/>
     </div>
   );
 }

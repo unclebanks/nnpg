@@ -97,4 +97,7 @@ export class Pokemon {
         }
         return false;
     };
+    heal() {
+        this.currentHp = this.computedStats.hp;
+    }
 }

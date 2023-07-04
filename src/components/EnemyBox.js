@@ -15,6 +15,7 @@ export const EnemyBox = (props) => {
         <div id="townBox" style={{"display":"none"}}>
             <button onClick={()=>{props.userInteractions.viewTown(props.town,props.player)}} className="button">Town</button>
             <button onClick={()=>{props.userInteractions.trainerBattle()}} className="button" id="trainerButton">Trainer Battle</button>
+            <button onClick={()=>{props.userInteractions.viewCenter(props.player)}} className='button'>PokemonCenter</button>
         </div>
     </div>
   )

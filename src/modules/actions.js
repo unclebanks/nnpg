@@ -237,6 +237,9 @@ export class UserActions {
         town.renderTrader(player);
         document.getElementById('townContainer').style.display = 'block';
     };
+    viewCenter(player) {
+        document.getElementById('pokemonCenterContainer').style.display = 'block';
+    };
     trainerBattle(player,combatLoop) {
         const routeData = ROUTES[player.settings.currentRegionId][player.settings.currentRouteId];
         if (routeData['trainer'] && routeData['trainer']['poke'].length > 0) {
