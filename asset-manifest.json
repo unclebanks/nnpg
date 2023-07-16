@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/unclebanks/nnpg/static/css/main.72b0579d.css",
+    "main.js": "/unclebanks/nnpg/static/js/main.4d8f2ede.js",
+    "index.html": "/unclebanks/nnpg/index.html",
+    "main.72b0579d.css.map": "/unclebanks/nnpg/static/css/main.72b0579d.css.map",
+    "main.4d8f2ede.js.map": "/unclebanks/nnpg/static/js/main.4d8f2ede.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.72b0579d.css",
+    "static/js/main.4d8f2ede.js"
+  ]
+}
