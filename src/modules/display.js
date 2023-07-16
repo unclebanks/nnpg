@@ -327,7 +327,7 @@ export class Display {
         );
 
         $(`#enableCatchAll`).addEventListener( 'click'
-            , () => {
+            , (player) => {
                 let setCatchSetting;
                 if ($(`#enableCatchAll`).checked) {
                     $(`#enableCatchNew`).checked = false;
