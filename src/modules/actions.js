@@ -1,7 +1,7 @@
 import { ROUTES } from './routes';
 import { $,getRouteIndexByName,isEmpty } from './utilities';
 import { renderView } from './display';
-import { POKEDEXFLAGS } from './main';
+//import { POKEDEXFLAGS } from './main';
 
 export class UserActions {
     changeRoute(newRouteId, force = false,player,dom,combatLoop,enemy) {
@@ -221,7 +221,7 @@ export class UserActions {
         if (!isEmpty(player.badges)) {
             let badgesHTML = '';
             for (let badge in player.badges) {
-                badgesHTML += '<li>' + '<img src="assets/images/badges/' + [badge] + '.png"></img>' + '</li>';
+                badgesHTML += `<li> <img src="assets/images/badges/${badge}.png"></img></li>`;
             }
             document.getElementById('badgeList').innerHTML = badgesHTML;
         }

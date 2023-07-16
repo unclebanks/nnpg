@@ -242,7 +242,7 @@ export class Player {
         return true;
     };
     routeUnlocked(region, route) {
-        const routeData = ROUTES[region][route];
+        //const routeData = ROUTES[region][route];
         //reimplement unlock conditions later
         // if (routeData._unlock) {
         //     return this.meetsCriteria(routeData._unlock);

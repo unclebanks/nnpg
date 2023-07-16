@@ -58,16 +58,15 @@ export class Combat {
     };
     calculateDamageMultiplier(attackingTypes, defendingTypes) {
         const typeEffectiveness = (attackingType, defendingTypes) =>
-            TYPES[attackingType][defendingTypes[0]] * (defendingTypes[1] && TYPES[attackingType][defendingTypes[1]] || 1);
+            (TYPES[attackingType][defendingTypes[0]] * (defendingTypes[1] && TYPES[attackingType][defendingTypes[1]]) || 1);
         return Math.max(
-            typeEffectiveness(attackingTypes[0], defendingTypes),
-            attackingTypes[1] && typeEffectiveness(attackingTypes[1], defendingTypes) || 0
+            (typeEffectiveness(attackingTypes[0], defendingTypes),
+            attackingTypes[1] && typeEffectiveness(attackingTypes[1], defendingTypes)) || 0
         )
     };
     dealDamage(attacker, defender, who,dom,enemy,player,userInteractions) {
         if (!attacker || !defender) return null;
         if (attacker.alive() && defender.alive()) {
-            const consoleColor = (who === 'player') ? 'green' : 'rgb(207, 103, 59)';
             // calculate damage done
             const missRNG = RNG(5);
             if (!missRNG) {
@@ -91,8 +90,8 @@ export class Combat {
             window.clearTimeout(this.playerTimerId);
             window.clearTimeout(this.enemyTimerId);
 
-            if ((who === 'enemy') && !attacker.alive() ||
-                (who === 'player') && !defender.alive())
+            if (((who === 'enemy') && !attacker.alive()) ||
+                ((who === 'player') && !defender.alive()))
             {
                 this.enemyFaint(enemy,player,dom,userInteractions);
             } else {
@@ -173,7 +172,7 @@ export class Combat {
         dom.renderPokeList(false,player);
     };
     attemptCatch(enemy,player,dom) {
-        if (this.catchEnabled === 'all' && !this.trainer|| (this.catchEnabled === 'new' && !player.hasPokemon(enemy.activePoke().name, 0)) && !this.trainer) {
+        if ((this.catchEnabled === 'all' && !this.trainer )|| ((this.catchEnabled === 'new' && !player.hasPokemon(enemy.activePoke().name, 0)) && !this.trainer)) {
             const selectedBall = (enemy.activePoke().shiny ? player.bestAvailableBall() : player.selectedBall);
             if (player.consumeBall(selectedBall)) {
                 dom.renderBalls();

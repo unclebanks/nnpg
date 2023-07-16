@@ -1,7 +1,7 @@
 import { $,flash, getPokeIdByName } from './utilities';
-import { ROUTES } from './routes';
+//import { ROUTES } from './routes';
 import { POKEDEX } from './db';
-import {POKEDEXFLAGS,COLORS} from './main';
+import {POKEDEXFLAGS} from './main';
 import { PokemonFNImageImport } from '../data/PokemonFrontNormalImageImports';
 import { PokemonBNImageImport } from '../data/PokemonBackNormalImageImports';
 
@@ -28,12 +28,12 @@ export class Display {
     renderPokeOnContainer(id, poke, face,player) {
         const container = $('#' + id + 'Box').querySelector('.pokeBox');
         const townBox = $('#townBox');
-        const trainerButton = $('#trainerButton');
+        //const trainerButton = $('#trainerButton');
         if (!poke) {
             container.style.display = 'none';
             if (id === 'enemy') {
                 townBox.style.display = 'block';
-                let route = ROUTES[player.settings.currentRegionId][player.settings.currentRouteId];
+                //let route = ROUTES[player.settings.currentRegionId][player.settings.currentRouteId];
 
             }
             return null;

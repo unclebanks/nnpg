@@ -63,7 +63,7 @@ export class Town {
             const disableButton = (!canBuy || own) ? ' disabled="true"' : '';
             const buttonText = (own) ? 'Own' : 'Buy';
             const buttonHTML = ' <button onclick="town.buyPokeCoinItem(\'' + i + '\')"' + disableButton + '>' + buttonText + '</button>';
-            pokecoinShopHTML += '<li>' + this.pokecoinShopItems[i].name + ': ' + '<img src="assets/images/currency/PokeCoin.png" height="16" width="16"></img>' + this.pokecoinShopItems[i].pokecoins + buttonHTML + '</li>';
+            pokecoinShopHTML += `<li>${this.pokecoinShopItems[i].name}:<img src="assets/images/currency/PokeCoin.png" height="16" width="16"></img>${this.pokecoinShopItems[i].pokecoins}${buttonHTML}</li>`;
         }
         $('#pokecoinShopItems').innerHTML = pokecoinShopHTML;
     };
@@ -81,7 +81,7 @@ export class Town {
             const disableButton = (!canBuy || own) ? ' disabled="true"' : '';
             const buttonText = (own) ? 'Own' : 'Buy';
             const buttonHTML = ' <button onclick="town.buyBattleCoinItem(\'' + i + '\')"' + disableButton + '>' + buttonText + '</button>';
-            battlecoinShopHTML += '<li>' + this.battlecoinShopItems[i].name + ': ' + '<img src="assets/images/currency/BattleCoin.png" height="16" width="16"></img>' + this.battlecoinShopItems[i].battlecoins + buttonHTML + '</li>';
+            battlecoinShopHTML += `<li>${this.battlecoinShopItems[i].name}:<img src="assets/images/currency/BattleCoin.png" height="16" width="16"></img>${this.battlecoinShopItems[i].battlecoins}${buttonHTML}</li>`;
         }
         $('#battlecoinShopItems').innerHTML = battlecoinShopHTML;
     };
@@ -95,7 +95,7 @@ export class Town {
             const disableButton = (!canBuy || own) ? ' disabled="true"' : '';
             const buttonText = (own) ? 'Own' : 'Buy';
             const buttonHTML = ' <button onclick="town.buyCatchCoinItem(\'' + i + '\')"' + disableButton + '>' + buttonText + '</button>';
-            catchcoinShopHTML += '<li>' + this.catchcoinShopItems[i].name + ': ' + '<img src="assets/images/currency/CatchCoin.png" height="16" width="16"></img>' + this.catchcoinShopItems[i].catchcoins + buttonHTML + '</li>';
+            catchcoinShopHTML += `<li>${this.catchcoinShopItems[i].name}:<img src="assets/images/currency/CatchCoin.png" height="16" width="16"></img>${this.catchcoinShopItems[i].catchcoins}${buttonHTML}</li>`;
         }
         $('#catchcoinShopItems').innerHTML = catchcoinShopHTML;
     };
